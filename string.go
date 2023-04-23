@@ -13,6 +13,26 @@ func (s String) ToInt() (Int, error) {
 	return Int(i), err
 }
 
+func (s String) ToInt8() (Int8, error) {
+	i, err := strconv.Atoi(string(s))
+	return Int8(i), err
+}
+
+func (s String) ToInt16() (Int16, error) {
+	i, err := strconv.Atoi(string(s))
+	return Int16(i), err
+}
+
+func (s String) ToInt32() (Int32, error) {
+	i, err := strconv.Atoi(string(s))
+	return Int32(i), err
+}
+
+func (s String) ToInt64() (Int64, error) {
+	i, err := strconv.Atoi(string(s))
+	return Int64(i), err
+}
+
 func (s String) ToFloat32() (Float32, error) {
 	f, err := strconv.ParseFloat(string(s), 64)
 	return Float32(f), err
@@ -26,6 +46,10 @@ func (s String) ToFloat64() (Float64, error) {
 func (s String) ToBool() (Bool, error) {
 	b, err := strconv.ParseBool(string(s))
 	return Bool(b), err
+}
+
+func (s String) ToByteArray() ByteArray {
+	return ByteArray(s)
 }
 
 func (s String) Split(delimiter string) []String {
